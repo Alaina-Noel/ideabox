@@ -1,10 +1,23 @@
 import React from 'react';
+import Card from './Card';
 import './Ideas.css'
 
-const Ideas = ({name, name2}) => {
-  // const { name , name2 } = props; - this used to be here with props on line 4 as the arg
+const Ideas = ({ideas}) => {
+  const ideaCards = ideas.map(idea => {
+    return (
+      <Card 
+      title = {idea.title}
+      description = {idea.description}
+      id = {idea.id}
+      key = {idea.id}
+      />
+    )
+  })
+
   return (
-    <h2>Hello, {name} {name2}!</h2>
+    <div className='ideas-container'>
+      {ideaCards}
+    </div>
   )
 }
 

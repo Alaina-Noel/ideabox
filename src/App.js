@@ -13,8 +13,7 @@ const App = () => {
     return (
       <main className="App">
       <h1>Idea Box</h1>
-      < Ideas name='Alaina' />
-      < Ideas name2='Megan' />
+      < Ideas ideas={ideas} />
       </main>
     )
   }
