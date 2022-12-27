@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Ideas from './Ideas';
+import Form from './Form';
 
 const initialIdeas = [
   { id: 1, title: 'Sweaters for pugs', description: 'Sweaters but only for pugs to wear' },
@@ -10,8 +11,15 @@ const initialIdeas = [
 
 const App = () => {
   const [ideas, setIdeas] = useState(initialIdeas);
+
+  const addIdea = (idea) => {
+    let newIdeaList = ideas.concat([idea]);
+    setIdeas(newIdeaList);
+  }
+
     return (
       <main className="App">
+      <Form addIdea={addIdea}/>
       <h1>Idea Box</h1>
       < Ideas ideas={ideas} />
       </main>
