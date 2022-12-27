@@ -17,11 +17,16 @@ const App = () => {
     setIdeas(newIdeaList);
   }
 
+  const deleteIdea = (id) => {
+    let newIdeaList = ideas.filter(idea => idea.id !== id);
+    setIdeas(newIdeaList);
+  };
+
     return (
       <main className="App">
       <Form addIdea={addIdea}/>
       <h1>Idea Box</h1>
-      < Ideas ideas={ideas} />
+      < Ideas ideas={ideas} deleteIdea={deleteIdea} />
       </main>
     )
   }

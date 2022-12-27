@@ -1,15 +1,17 @@
 import React from 'react';
+import './Ideas.css';
 import Card from './Card';
-import './Ideas.css'
 
-const Ideas = ({ideas}) => {
+const Ideas = ({ideas, deleteIdea}) => {
+
   const ideaCards = ideas.map(idea => {
     return (
-      <Card 
-      title = {idea.title}
-      description = {idea.description}
-      id = {idea.id}
-      key = {idea.id}
+      <Card
+        title={idea.title}
+        description={idea.description}
+        id={idea.id}
+        key={idea.id}
+        deleteIdea={deleteIdea}
       />
     )
   })
@@ -20,5 +22,4 @@ const Ideas = ({ideas}) => {
     </div>
   )
 }
-
 export default Ideas;
